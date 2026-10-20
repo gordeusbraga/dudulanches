@@ -111,7 +111,7 @@ const Historico: React.FC = () => {
                     <IonIcon icon={readerOutline} />
                   </span>
                   <div className="dl-row__main">
-                    <p className="dl-row__title">
+                    <p className="dl-row__title dl-row__title--compacto">
                       Comanda {numeroComanda(c.numero)} · {m ? nomeMesa(m.numero) : 'Mesa'}
                     </p>
                     <p className="dl-row__sub">
@@ -119,7 +119,7 @@ const Historico: React.FC = () => {
                       {c.encerradaEm ? ` – ${hora(c.encerradaEm)}` : ''}
                     </p>
                   </div>
-                  <div style={{ textAlign: 'right' }}>
+                  <div className="dl-row__lado">
                     <span className="dl-row__valor">
                       {moeda(totalComanda(c.id) - c.desconto)}
                     </span>

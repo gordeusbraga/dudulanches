@@ -800,6 +800,19 @@ ion-content {
   font-weight: 700;
   color: var(--dl-text);
   margin: 0 0 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dl-row__title--compacto {
+  font-size: 13px;
+}
+
+/* Coluna de valor + status à direita: não encolhe, quem cede é o título */
+.dl-row__lado {
+  text-align: right;
+  flex-shrink: 0;
 }
 
 .dl-row__sub {

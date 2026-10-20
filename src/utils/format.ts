@@ -34,5 +34,19 @@ export const mesmoDia = (iso: string, ref = new Date()) => {
   );
 };
 
+/** Data de hoje no fuso local, no formato "2025-03-12". */
+export const hojeLocal = () => {
+  const d = new Date();
+  const dois = (n: number) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${dois(d.getMonth() + 1)}-${dois(d.getDate())}`;
+};
+
+/**
+ * "2025-03-12" → "12/03/2025".
+ * Não passa por `new Date()`, que leria a data como meia-noite UTC
+ * e mostraria o dia anterior no horário de Brasília.
+ */
+export const dataCadastro = (data: string) => data.slice(0, 10).split('-').reverse().join('/');
+
 export const nomeMesa = (numero: number) => `Mesa ${String(numero).padStart(2, '0')}`;
 export const numeroComanda = (numero: number) => `#${String(numero).padStart(3, '0')}`;

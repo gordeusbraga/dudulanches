@@ -22,7 +22,7 @@ import PageHeader from '../components/PageHeader';
 import { PERFIS, PERMISSOES, useApp } from '../context/AppContext';
 import type { PerfilUsuario, Usuario } from '../types';
 import { novoId } from '../services/storage';
-import { iniciais } from '../utils/format';
+import { dataCadastro, hojeLocal, iniciais } from '../utils/format';
 
 const CORES = ['#6114BE', '#E8A317', '#1FA97A', '#D4574E', '#8B5CF6', '#2E7FD4'];
 
@@ -44,7 +44,7 @@ const UsuarioEditar: React.FC = () => {
       senha: '123456',
       perfil: 'garcom',
       ativo: true,
-      criadoEm: new Date().toISOString().slice(0, 10),
+      criadoEm: hojeLocal(),
       cor: CORES[Math.floor(Math.random() * CORES.length)]
     }
   );
@@ -144,7 +144,7 @@ const UsuarioEditar: React.FC = () => {
             <p className="dl-centro__sub">
               {novo
                 ? 'Senha inicial: 123456'
-                : `Cadastrado em ${new Date(form.criadoEm).toLocaleDateString('pt-BR')}`}
+                : `Cadastrado em ${dataCadastro(form.criadoEm)}`}
             </p>
           </div>
 
