@@ -1,2 +1,79 @@
-/* For information on how to create your own theme, please refer to:
-http://ionicframework.com/docs/theming/ */
+/* Paleta Dudu Lanches — extraída do design das telas */
+
+:root {
+  /* Roxos da marca */
+  --dl-brand-900: #2E0A5C;
+  --dl-brand-800: #3D0C7A;
+  --dl-brand-700: #4E0F99;
+  --dl-brand-600: #6114BE;
+  --dl-brand-500: #7B22D9;
+  --dl-brand-400: #9747FF;
+  --dl-brand-200: #DCC4FB;
+  --dl-brand-100: #EFE3FE;
+  --dl-brand-50: #F7F1FE;
+
+  /* Amarelo de destaque (ações principais) */
+  --dl-accent: #F5B301;
+  --dl-accent-2: #FFC93D;
+  --dl-accent-ink: #4A3200;
+
+  /* Superfícies e texto */
+  --dl-bg: #F5F2FA;
+  --dl-surface: #FFFFFF;
+  --dl-line: #EEE9F6;
+  --dl-text: #1B1533;
+  --dl-text-2: #6B6685;
+  --dl-text-3: #A29DB8;
+
+  /* Status */
+  --dl-green: #16A34A;
+  --dl-green-bg: #E6F7EE;
+  --dl-orange: #EA580C;
+  --dl-orange-bg: #FFF0E6;
+  --dl-amber: #C98A04;
+  --dl-amber-bg: #FDF4DC;
+  --dl-red: #DC2626;
+  --dl-red-bg: #FDECEC;
+
+  --dl-radius: 18px;
+  --dl-radius-sm: 12px;
+  --dl-shadow: 0 2px 12px rgba(46, 10, 92, 0.07);
+  --dl-shadow-lg: 0 -6px 20px rgba(46, 10, 92, 0.08);
+
+  /* Cores do Ionic mapeadas para a marca */
+  --ion-color-primary: #6114be;
+  --ion-color-primary-rgb: 97, 20, 190;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #5511a7;
+  --ion-color-primary-tint: #712bc5;
+
+  --ion-color-secondary: #f5b301;
+  --ion-color-secondary-rgb: 245, 179, 1;
+  --ion-color-secondary-contrast: #3d2c00;
+  --ion-color-secondary-contrast-rgb: 61, 44, 0;
+  --ion-color-secondary-shade: #d89e01;
+  --ion-color-secondary-tint: #f6bb1a;
+
+  --ion-color-success: #16a34a;
+  --ion-color-success-rgb: 22, 163, 74;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #138f41;
+  --ion-color-success-tint: #2dac5c;
+
+  --ion-color-danger: #dc2626;
+  --ion-color-danger-rgb: 220, 38, 38;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #c22121;
+  --ion-color-danger-tint: #e03c3c;
+
+  --ion-background-color: #f5f2fa;
+  --ion-background-color-rgb: 245, 242, 250;
+  --ion-text-color: #1b1533;
+  --ion-text-color-rgb: 27, 21, 51;
+
+  --ion-font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+}

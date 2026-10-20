@@ -1,0 +1,1645 @@
+/* ==========================================================================
+   Estilos compartilhados das telas do Dudu Lanches
+   ========================================================================== */
+
+ion-content {
+  --background: var(--dl-bg);
+}
+
+.dl-page {
+  padding: 16px;
+  padding-bottom: 24px;
+}
+
+/* ---------- Cabeçalho roxo (Mesas, Cozinha, Salão, Histórico, Usuários) ---- */
+
+.dl-brand-header {
+  background: linear-gradient(160deg, var(--dl-brand-600) 0%, var(--dl-brand-800) 100%);
+  border-radius: 0 0 26px 26px;
+  padding: calc(12px + var(--ion-safe-area-top, 0px)) 18px 18px;
+  color: #fff;
+}
+
+.dl-brand-header__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dl-icon-btn {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 13px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.dl-icon-btn--light {
+  background: var(--dl-brand-100);
+  color: var(--dl-brand-600);
+}
+
+.dl-icon-btn--danger {
+  background: var(--dl-red-bg);
+  color: var(--dl-red);
+}
+
+.dl-icon-btn__dot {
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--dl-accent);
+  border: 1.5px solid var(--dl-brand-700);
+}
+
+.dl-brand-header__titles {
+  flex: 1;
+  min-width: 0;
+}
+
+.dl-brand-header__title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.dl-brand-header__subtitle {
+  font-size: 12.5px;
+  opacity: 0.72;
+  margin: 2px 0 0;
+}
+
+/* Busca dentro do cabeçalho roxo */
+.dl-search {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 0 14px;
+  height: 46px;
+}
+
+.dl-search ion-icon {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dl-search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.dl-search input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ---------- Cabeçalho claro (telas de detalhe / formulários) -------------- */
+
+.dl-page-header {
+  background: var(--dl-bg);
+  padding: calc(10px + var(--ion-safe-area-top, 0px)) 16px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dl-page-header__titles {
+  flex: 1;
+  min-width: 0;
+}
+
+.dl-page-header__title {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--dl-text);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.dl-page-header__subtitle {
+  font-size: 12.5px;
+  color: var(--dl-text-3);
+  margin: 2px 0 0;
+}
+
+.dl-page-header__actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ---------- Chips de filtro ---------------------------------------------- */
+
+.dl-chips {
+  display: flex;
+  gap: 9px;
+  overflow-x: auto;
+  padding: 2px 2px 4px;
+  scrollbar-width: none;
+}
+
+.dl-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.dl-chip {
+  flex: 0 0 auto;
+  border: 1px solid var(--dl-line);
+  background: var(--dl-surface);
+  color: var(--dl-text-2);
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.dl-chip--active {
+  background: var(--dl-brand-600);
+  border-color: var(--dl-brand-600);
+  color: #fff;
+}
+
+.dl-chip__count {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 1px 7px;
+  font-size: 11.5px;
+}
+
+.dl-chip:not(.dl-chip--active) .dl-chip__count {
+  background: transparent;
+  color: var(--dl-text-3);
+  padding: 0;
+}
+
+/* Abas em "pílula" das filas (Cozinha / Salão) */
+.dl-tabs {
+  display: flex;
+  background: var(--dl-surface);
+  border-radius: 999px;
+  padding: 5px;
+  box-shadow: var(--dl-shadow);
+}
+
+.dl-tabs__item {
+  flex: 1;
+  border: none;
+  background: transparent;
+  border-radius: 999px;
+  padding: 10px 6px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--dl-text-2);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dl-tabs__item--active {
+  background: var(--dl-brand-600);
+  color: #fff;
+}
+
+.dl-tabs__count {
+  opacity: 0.65;
+  margin-left: 4px;
+  font-weight: 600;
+}
+
+/* ---------- Cartões ------------------------------------------------------- */
+
+.dl-card {
+  background: var(--dl-surface);
+  border-radius: var(--dl-radius);
+  box-shadow: var(--dl-shadow);
+  padding: 16px;
+}
+
+.dl-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dl-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  color: var(--dl-text-3);
+  margin: 18px 2px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dl-link {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--dl-brand-600);
+  text-transform: none;
+  letter-spacing: 0;
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dl-empty {
+  text-align: center;
+  color: var(--dl-text-3);
+  font-size: 13.5px;
+  padding: 44px 20px;
+}
+
+/* ---------- Grade de mesas ------------------------------------------------ */
+
+.dl-mesas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.dl-mesa-card {
+  background: var(--dl-surface);
+  border-radius: var(--dl-radius);
+  box-shadow: var(--dl-shadow);
+  padding: 14px 14px 16px;
+  text-align: left;
+  border: none;
+  border-left: 4px solid transparent;
+  font-family: inherit;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+.dl-mesa-card--ocupada {
+  border-left-color: var(--dl-brand-500);
+}
+
+.dl-mesa-card--ocupada.dl-mesa-card--alerta {
+  border-left-color: var(--dl-accent);
+}
+
+.dl-mesa-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.dl-mesa-card__numero {
+  font-size: 27px;
+  font-weight: 700;
+  color: var(--dl-brand-400);
+  line-height: 1;
+}
+
+.dl-mesa-card--ocupada .dl-mesa-card__numero {
+  color: var(--dl-brand-600);
+}
+
+.dl-mesa-card__nome {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dl-text);
+  margin: 12px 0 0;
+}
+
+.dl-mesa-card__info {
+  font-size: 11.5px;
+  color: var(--dl-text-3);
+  margin: 4px 0 0;
+}
+
+.dl-mesa-card__valor {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--dl-brand-600);
+  margin: 8px 0 0;
+}
+
+.dl-mesa-card__valor--vazio {
+  color: var(--dl-text-3);
+  font-weight: 600;
+}
+
+/* ---------- Badges de status --------------------------------------------- */
+
+.dl-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.dl-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.dl-badge--sem-ponto::before {
+  display: none;
+}
+
+.dl-badge--verde {
+  background: var(--dl-green-bg);
+  color: var(--dl-green);
+}
+
+.dl-badge--roxo {
+  background: var(--dl-brand-100);
+  color: var(--dl-brand-600);
+}
+
+.dl-badge--laranja {
+  background: var(--dl-orange-bg);
+  color: var(--dl-orange);
+}
+
+.dl-badge--amarelo {
+  background: var(--dl-amber-bg);
+  color: var(--dl-amber);
+}
+
+.dl-badge--cinza {
+  background: #EFEDF4;
+  color: var(--dl-text-2);
+}
+
+.dl-badge--vermelho {
+  background: var(--dl-red-bg);
+  color: var(--dl-red);
+}
+
+/* ---------- Comanda / itens ---------------------------------------------- */
+
+.dl-comanda-card {
+  background: var(--dl-surface);
+  border-radius: var(--dl-radius);
+  box-shadow: var(--dl-shadow);
+  overflow: hidden;
+}
+
+.dl-comanda-card__head {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 14px 10px;
+}
+
+.dl-tag {
+  background: var(--dl-brand-700);
+  color: #fff;
+  border-radius: 999px;
+  padding: 5px 11px;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.dl-tag--escura {
+  background: var(--dl-brand-900);
+}
+
+.dl-comanda-card__hora {
+  font-size: 12px;
+  color: var(--dl-text-3);
+  flex: 1;
+}
+
+.dl-comanda-card__body {
+  padding: 0 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dl-comanda-card__foot {
+  border-top: 1px solid var(--dl-line);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--dl-text-2);
+  font-weight: 600;
+}
+
+.dl-comanda-card__foot strong {
+  color: var(--dl-text);
+  font-size: 15px;
+}
+
+.dl-item {
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  background: var(--dl-surface);
+  border: 1px solid var(--dl-line);
+  border-radius: var(--dl-radius-sm);
+  padding: 11px 12px;
+}
+
+.dl-item--plano {
+  border: none;
+  box-shadow: var(--dl-shadow);
+}
+
+.dl-item__qtd {
+  background: var(--dl-brand-100);
+  color: var(--dl-brand-600);
+  border-radius: 10px;
+  min-width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.dl-item__qtd--amarela {
+  background: #FDF0D5;
+  color: #B07B00;
+}
+
+.dl-item__main {
+  flex: 1;
+  min-width: 0;
+}
+
+.dl-item__nome {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--dl-text);
+  margin: 0;
+}
+
+.dl-item__obs {
+  font-size: 11.5px;
+  color: var(--dl-text-3);
+  margin: 3px 0 0;
+}
+
+.dl-item__right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.dl-item__preco {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--dl-text);
+}
+
+/* Resumo da comanda aberta */
+.dl-resumo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.dl-resumo__label {
+  font-size: 11.5px;
+  color: var(--dl-text-3);
+  margin: 0 0 3px;
+}
+
+.dl-resumo__valor {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dl-text);
+  margin: 0;
+}
+
+.dl-resumo__total {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--dl-brand-600);
+  margin: 0;
+}
+
+/* ---------- Rodapé fixo com total + ações -------------------------------- */
+
+.dl-footer {
+  background: var(--dl-surface);
+  border-radius: 22px 22px 0 0;
+  box-shadow: var(--dl-shadow-lg);
+  padding: 14px 16px calc(14px + var(--ion-safe-area-bottom, 0px));
+}
+
+.dl-footer__total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.dl-footer__total span {
+  font-size: 13.5px;
+  color: var(--dl-text-2);
+  font-weight: 600;
+}
+
+.dl-footer__total strong {
+  font-size: 20px;
+  color: var(--dl-brand-600);
+}
+
+.dl-footer__acoes {
+  display: flex;
+  gap: 10px;
+}
+
+/* ---------- Botões -------------------------------------------------------- */
+
+.dl-btn {
+  flex: 1;
+  border-radius: 14px;
+  border: none;
+  padding: 15px 16px;
+  font-size: 14.5px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dl-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.dl-btn--primario {
+  background: var(--dl-brand-700);
+  color: #fff;
+}
+
+.dl-btn--acento {
+  background: linear-gradient(135deg, var(--dl-accent-2), var(--dl-accent));
+  color: var(--dl-accent-ink);
+  box-shadow: 0 6px 16px rgba(245, 179, 1, 0.35);
+}
+
+.dl-btn--contorno {
+  background: var(--dl-surface);
+  color: var(--dl-brand-600);
+  border: 1.5px solid var(--dl-brand-200);
+}
+
+.dl-btn--suave {
+  background: var(--dl-brand-50);
+  color: var(--dl-brand-600);
+}
+
+.dl-btn--perigo {
+  background: var(--dl-red-bg);
+  color: var(--dl-red);
+}
+
+.dl-btn--bloco {
+  width: 100%;
+}
+
+/* ---------- Formulários --------------------------------------------------- */
+
+.dl-field {
+  margin-bottom: 14px;
+}
+
+.dl-field__label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--dl-text-2);
+  margin-bottom: 7px;
+}
+
+.dl-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--dl-surface);
+  border: 1.5px solid var(--dl-line);
+  border-radius: 14px;
+  padding: 0 14px;
+  height: 52px;
+}
+
+.dl-input:focus-within {
+  border-color: var(--dl-brand-400);
+  box-shadow: 0 0 0 3px var(--dl-brand-50);
+}
+
+.dl-input > ion-icon {
+  font-size: 18px;
+  color: var(--dl-brand-400);
+}
+
+.dl-input input,
+.dl-input select {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14.5px;
+  font-family: inherit;
+  color: var(--dl-text);
+  height: 100%;
+  appearance: none;
+}
+
+.dl-input--area {
+  height: auto;
+  padding: 12px 14px;
+}
+
+.dl-input textarea {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--dl-text);
+  resize: none;
+  min-height: 68px;
+}
+
+.dl-input--select {
+  position: relative;
+}
+
+.dl-input--select ion-icon.dl-input__caret {
+  color: var(--dl-text-3);
+  font-size: 15px;
+  pointer-events: none;
+}
+
+.dl-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.dl-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--dl-surface);
+  border: 1.5px solid var(--dl-line);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.dl-switch-row__title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--dl-text);
+  margin: 0;
+}
+
+.dl-switch-row__sub {
+  font-size: 11.5px;
+  color: var(--dl-text-3);
+  margin: 2px 0 0;
+}
+
+/* ---------- Avatares ------------------------------------------------------ */
+
+.dl-avatar {
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  flex: 0 0 auto;
+}
+
+.dl-avatar--sm {
+  width: 42px;
+  height: 42px;
+  font-size: 16px;
+  border-radius: 13px;
+}
+
+.dl-avatar--lg {
+  width: 92px;
+  height: 92px;
+  font-size: 38px;
+  border-radius: 26px;
+}
+
+/* ---------- Lista genérica (usuários, histórico) -------------------------- */
+
+.dl-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--dl-surface);
+  border-radius: var(--dl-radius);
+  box-shadow: var(--dl-shadow);
+  padding: 13px 14px;
+  width: 100%;
+  border: none;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dl-row__main {
+  flex: 1;
+  min-width: 0;
+}
+
+.dl-row__title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--dl-text);
+  margin: 0 0 6px;
+}
+
+.dl-row__sub {
+  font-size: 11.5px;
+  color: var(--dl-text-3);
+  margin: 5px 0 0;
+}
+
+.dl-row__right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--dl-text-3);
+  font-size: 11.5px;
+}
+
+.dl-row__valor {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dl-text);
+  display: block;
+  text-align: right;
+  margin-bottom: 6px;
+}
+
+.dl-row__icone {
+  width: 40px;
+  height: 40px;
+  border-radius: 13px;
+  background: var(--dl-brand-50);
+  color: var(--dl-brand-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex: 0 0 auto;
+}
+
+/* ---------- Cartões das filas (Cozinha / Salão) --------------------------- */
+
+.dl-fila-card {
+  background: var(--dl-surface);
+  border-radius: var(--dl-radius);
+  box-shadow: var(--dl-shadow);
+  padding: 14px;
+}
+
+.dl-fila-card__head {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 12px;
+}
+
+.dl-fila-card__pedido {
+  font-size: 12px;
+  color: var(--dl-text-3);
+  flex: 1;
+}
+
+.dl-fila-card__acao {
+  width: 100%;
+  margin-top: 12px;
+  border: none;
+  border-radius: 13px;
+  background: var(--dl-brand-50);
+  color: var(--dl-brand-600);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+/* ---------- Cartão de KPI (Histórico / Relatórios) ------------------------ */
+
+.dl-kpi {
+  background: linear-gradient(135deg, #FEF3D6, #FDE9B8);
+  border-radius: var(--dl-radius);
+  padding: 15px 16px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.dl-kpi__label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+  color: #A97A00;
+  margin: 0 0 6px;
+}
+
+.dl-kpi__valor {
+  font-size: 24px;
+  font-weight: 700;
+  color: #4A3200;
+  margin: 0;
+}
+
+.dl-kpi__extra {
+  text-align: right;
+  font-size: 11.5px;
+  color: #8A6400;
+  line-height: 1.7;
+}
+
+/* ---------- Estados vazios / destaque ------------------------------------- */
+
+.dl-livre-card {
+  background: linear-gradient(160deg, #EDFBF3, #F6FDF9);
+  border: 1px solid #D6F1E2;
+  border-radius: var(--dl-radius);
+  padding: 26px 20px;
+  text-align: center;
+}
+
+.dl-livre-card__icone {
+  width: 66px;
+  height: 66px;
+  border-radius: 22px;
+  background: #D8F3E4;
+  color: var(--dl-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin: 0 auto 14px;
+}
+
+.dl-livre-card__titulo {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dl-text);
+  margin: 0 0 8px;
+}
+
+.dl-livre-card__texto {
+  font-size: 13px;
+  color: var(--dl-text-2);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.dl-info-list__linha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 0;
+  font-size: 13.5px;
+  color: var(--dl-text-2);
+}
+
+.dl-info-list__linha + .dl-info-list__linha {
+  border-top: 1px solid var(--dl-line);
+}
+
+.dl-info-list__linha strong {
+  color: var(--dl-text);
+  font-weight: 700;
+}
+
+.dl-acoes-rapidas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.dl-acao-rapida {
+  background: var(--dl-surface);
+  border: none;
+  border-radius: var(--dl-radius-sm);
+  box-shadow: var(--dl-shadow);
+  padding: 15px 8px;
+  font-family: inherit;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--dl-brand-600);
+  cursor: pointer;
+}
+
+.dl-acao-rapida ion-icon {
+  display: block;
+  margin: 0 auto 7px;
+  font-size: 19px;
+}
+
+/* ---------- Novo pedido --------------------------------------------------- */
+
+.dl-produto-linha {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--dl-surface);
+  border-radius: var(--dl-radius);
+  box-shadow: var(--dl-shadow);
+  padding: 13px 14px;
+  border: 1.5px solid transparent;
+}
+
+.dl-produto-linha--selecionado {
+  border-color: var(--dl-brand-200);
+}
+
+.dl-produto-linha__nome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--dl-text);
+  margin: 0 0 5px;
+  flex-wrap: wrap;
+}
+
+.dl-produto-linha__preco {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--dl-brand-600);
+}
+
+.dl-stepper {
+  display: flex;
+  align-items: center;
+  background: var(--dl-brand-50);
+  border-radius: 12px;
+  padding: 4px;
+  gap: 2px;
+}
+
+.dl-stepper button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  color: var(--dl-brand-600);
+  border-radius: 9px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dl-stepper button:disabled {
+  color: var(--dl-brand-200);
+}
+
+.dl-stepper__valor {
+  min-width: 26px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dl-text);
+}
+
+.dl-obs-card {
+  background: var(--dl-brand-50);
+  border-radius: var(--dl-radius-sm);
+  padding: 12px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.dl-obs-card__label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--dl-brand-600);
+  margin: 0 0 4px;
+}
+
+.dl-obs-card textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 13.5px;
+  color: var(--dl-text);
+  resize: none;
+  min-height: 20px;
+}
+
+/* ---------- Comanda encerrada -------------------------------------------- */
+
+.dl-recibo-topo {
+  background: linear-gradient(150deg, var(--dl-brand-600), var(--dl-brand-800));
+  border-radius: var(--dl-radius);
+  padding: 18px;
+  color: #fff;
+}
+
+.dl-recibo-topo__mesa {
+  font-size: 11px;
+  letter-spacing: 1.1px;
+  font-weight: 700;
+  opacity: 0.7;
+  margin: 0 0 6px;
+}
+
+.dl-recibo-topo__valor {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.dl-recibo-topo__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 12.5px;
+}
+
+.dl-recibo-topo__grid span {
+  display: block;
+  font-size: 10.5px;
+  opacity: 0.65;
+  margin-bottom: 3px;
+}
+
+.dl-recibo-pedido__titulo {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+  color: var(--dl-text-3);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.dl-recibo-linha {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 7px 0;
+  font-size: 13.5px;
+  color: var(--dl-text);
+}
+
+.dl-recibo-linha__qtd {
+  color: var(--dl-brand-600);
+  font-weight: 700;
+  min-width: 26px;
+}
+
+.dl-recibo-linha__nome {
+  flex: 1;
+}
+
+.dl-recibo-linha__unit {
+  display: block;
+  font-size: 11px;
+  color: var(--dl-text-3);
+}
+
+.dl-recibo-linha__total {
+  font-weight: 700;
+}
+
+.dl-total-linha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13.5px;
+  color: var(--dl-text-2);
+  padding: 7px 0;
+}
+
+.dl-total-linha--final {
+  border-top: 1px solid var(--dl-line);
+  margin-top: 6px;
+  padding-top: 13px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dl-text);
+}
+
+.dl-total-linha--final strong {
+  font-size: 21px;
+  color: var(--dl-brand-600);
+}
+
+.dl-nota {
+  font-size: 11px;
+  color: var(--dl-text-3);
+  margin: 10px 0 0;
+}
+
+/* ---------- Login --------------------------------------------------------- */
+
+.dl-login {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dl-login__topo {
+  background: linear-gradient(165deg, var(--dl-brand-600), var(--dl-brand-800));
+  padding: calc(38px + var(--ion-safe-area-top, 0px)) 24px 34px;
+  text-align: center;
+  color: #fff;
+}
+
+.dl-login__logo {
+  width: 128px;
+  height: 128px;
+  border-radius: 30px;
+  object-fit: cover;
+  margin: 0 auto 16px;
+  display: block;
+  background: #fff;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
+}
+
+.dl-login__marca {
+  font-size: 27px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.dl-login__slogan {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--dl-accent-2);
+  margin: 6px 0 0;
+  font-weight: 600;
+}
+
+.dl-login__card {
+  flex: 1;
+  background: var(--dl-bg);
+  border-radius: 26px 26px 0 0;
+  margin-top: -18px;
+  padding: 26px 22px calc(26px + var(--ion-safe-area-bottom, 0px));
+}
+
+.dl-login__titulo {
+  font-size: 19px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--dl-text);
+  margin: 0;
+}
+
+.dl-login__sub {
+  font-size: 12.5px;
+  color: var(--dl-text-3);
+  text-align: center;
+  margin: 6px 0 22px;
+}
+
+.dl-login__esqueci {
+  display: block;
+  margin: 8px 0 20px auto;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--dl-brand-600);
+  cursor: pointer;
+}
+
+.dl-login__dica {
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--dl-text-3);
+  margin: 18px 0 0;
+}
+
+/* ---------- Menu lateral --------------------------------------------------- */
+
+ion-menu::part(container) {
+  border-radius: 0;
+}
+
+.dl-menu {
+  --background: linear-gradient(170deg, var(--dl-brand-600) 0%, var(--dl-brand-900) 100%);
+}
+
+.dl-menu ion-content {
+  --background: transparent;
+  --color: #fff;
+}
+
+.dl-menu__wrap {
+  padding: calc(18px + var(--ion-safe-area-top, 0px)) 16px calc(18px + var(--ion-safe-area-bottom, 0px));
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.dl-menu__perfil {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.dl-menu__nome {
+  font-size: 16.5px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.dl-menu__cargo {
+  font-size: 12px;
+  opacity: 0.7;
+  margin: 2px 0 0;
+}
+
+.dl-menu__nav {
+  padding: 14px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dl-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 14px;
+  border-radius: 13px;
+  border: none;
+  border-left: 3px solid transparent;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.86);
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dl-menu__item ion-icon {
+  font-size: 19px;
+}
+
+.dl-menu__item--ativo {
+  background: rgba(255, 255, 255, 0.14);
+  border-left-color: var(--dl-accent);
+  color: #fff;
+}
+
+.dl-menu__item-seta {
+  margin-left: auto;
+  font-size: 15px;
+  opacity: 0.6;
+}
+
+.dl-menu__turno {
+  margin-top: auto;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--dl-radius);
+  padding: 14px 16px;
+}
+
+.dl-menu__turno-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  color: var(--dl-accent-2);
+  margin: 0 0 10px;
+}
+
+.dl-menu__turno-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 10px;
+  align-items: end;
+}
+
+.dl-menu__turno-valor {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.dl-menu__turno-desc {
+  font-size: 10.5px;
+  opacity: 0.65;
+  margin: 2px 0 0;
+}
+
+.dl-menu__sair {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ---------- FAB ----------------------------------------------------------- */
+
+.dl-fab {
+  position: fixed;
+  right: 20px;
+  bottom: calc(22px + var(--ion-safe-area-bottom, 0px));
+  width: 58px;
+  height: 58px;
+  border-radius: 20px;
+  border: none;
+  background: linear-gradient(135deg, var(--dl-accent-2), var(--dl-accent));
+  color: var(--dl-accent-ink);
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 22px rgba(245, 179, 1, 0.42);
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* ---------- Permissões (edição de usuário) -------------------------------- */
+
+.dl-permissoes {
+  background: var(--dl-brand-50);
+  border-radius: var(--dl-radius-sm);
+  padding: 14px;
+}
+
+.dl-permissoes__titulo {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--dl-brand-600);
+  margin: 0 0 10px;
+}
+
+.dl-permissoes__item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12.5px;
+  padding: 4px 0;
+  color: var(--dl-text-2);
+}
+
+.dl-permissoes__item ion-icon {
+  font-size: 15px;
+}
+
+.dl-permissoes__item--ok ion-icon {
+  color: var(--dl-green);
+}
+
+.dl-permissoes__item--nao {
+  color: var(--dl-text-3);
+}
+
+.dl-permissoes__item--nao ion-icon {
+  color: var(--dl-text-3);
+}
+
+/* ---------- Upload de foto (produto) -------------------------------------- */
+
+.dl-upload {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--dl-surface);
+  border-radius: var(--dl-radius);
+  box-shadow: var(--dl-shadow);
+  padding: 14px;
+}
+
+.dl-upload__thumb {
+  width: 54px;
+  height: 54px;
+  border-radius: 15px;
+  background: var(--dl-brand-600);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+.dl-upload__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dl-upload__main {
+  flex: 1;
+}
+
+.dl-upload__titulo {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dl-text);
+  margin: 0;
+}
+
+.dl-upload__sub {
+  font-size: 11.5px;
+  color: var(--dl-text-3);
+  margin: 3px 0 0;
+}
+
+.dl-upload__btn {
+  border: 1.5px solid var(--dl-brand-200);
+  background: var(--dl-surface);
+  color: var(--dl-brand-600);
+  border-radius: 12px;
+  padding: 9px 13px;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+/* Avatar com botão de câmera (edição de usuário) */
+.dl-avatar-edit {
+  position: relative;
+  width: 92px;
+  margin: 4px auto 12px;
+}
+
+.dl-avatar-edit__cam {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  border: 3px solid var(--dl-bg);
+  background: var(--dl-accent);
+  color: var(--dl-accent-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dl-centro {
+  text-align: center;
+}
+
+.dl-centro__nome {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--dl-text);
+  margin: 0;
+}
+
+.dl-centro__sub {
+  font-size: 11.5px;
+  color: var(--dl-text-3);
+  margin: 4px 0 18px;
+}
+
+/* ---------- Relatórios ----------------------------------------------------- */
+
+.dl-barra {
+  margin-bottom: 14px;
+}
+
+.dl-barra__topo {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--dl-text-2);
+  margin-bottom: 6px;
+}
+
+.dl-barra__topo strong {
+  color: var(--dl-text);
+  font-size: 13.5px;
+}
+
+.dl-barra__trilho {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--dl-brand-50);
+  overflow: hidden;
+}
+
+.dl-barra__preenchimento {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--dl-brand-400), var(--dl-brand-600));
+}
+
+.dl-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.dl-mini-card {
+  background: var(--dl-surface);
+  border-radius: var(--dl-radius);
+  box-shadow: var(--dl-shadow);
+  padding: 14px;
+}
+
+.dl-mini-card__valor {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--dl-brand-600);
+  margin: 0;
+}
+
+.dl-mini-card__label {
+  font-size: 11.5px;
+  color: var(--dl-text-3);
+  margin: 4px 0 0;
+}
+
+.dl-menu__nav ion-menu-toggle {
+  display: block;
+}
